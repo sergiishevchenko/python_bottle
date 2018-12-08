@@ -1,31 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-Bottle is a fast and simple micro-framework for small web applications. It
-offers request dispatching (Routes) with URL parameter support, templates,
-a built-in HTTP Server and adapters for many third party WSGI/HTTP-server and
-template engines - all in a single file and with no dependencies other than the
-Python Standard Library.
 
-Homepage and documentation: http://bottlepy.org/
-
-Copyright (c) 2015, Marcel Hellkamp.
-License: MIT (see LICENSE for details)
-"""
 
 from __future__ import with_statement
 import sys
 
-__author__ = 'Marcel Hellkamp'
+__author__ = 'Sergii Shevchenko'
 __version__ = '0.13-dev'
 __license__ = 'MIT'
-
-###############################################################################
-# Command-line interface ########################################################
-###############################################################################
-# INFO: Some server adapters need to monkey-patch std-lib modules before they
-# are imported. This is why some of the command-line handling is done here, but
-# the actual call to main() is at the end of the file.
 
 
 def _cli_parse(args):
@@ -61,11 +43,6 @@ def _cli_patch(args):
 
 if __name__ == '__main__':
     _cli_patch(sys.argv)
-
-###############################################################################
-# Imports and Python 2/3 unification ###########################################
-###############################################################################
-
 
 import base64, cgi, email.utils, functools, hmac, imp, itertools, mimetypes,\
         os, re, tempfile, threading, time, warnings, hashlib
@@ -120,7 +97,6 @@ except ImportError:  # pragma: no cover
             json_lds = json_dumps
 
 # We now try to fix 2.5/2.6/3.1/3.2 incompatibilities.
-# It ain't pretty but it works... Sorry for the mess.
 
 py = sys.version_info
 py3k = py >= (3, 0, 0)
